@@ -1,0 +1,22 @@
+body {
+  background-color: gainsboro;
+}
+
+#root {
+  max-width: 1280px;
+  /* margin: 0 auto; */
+  /* padding: 2rem; */
+  text-align: center;
+}
+
+h1 {
+  width: 100vw;
+}
+
+.flags-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  flex-wrap: wrap;
+}
