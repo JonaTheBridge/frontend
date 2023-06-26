@@ -1,0 +1,14 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.bg-blue {
+  background-color: rgb(113 113 218);
+}
+
+.bg-red {
+  background-color: rgb(200 92 92);
+}
