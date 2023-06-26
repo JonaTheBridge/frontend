@@ -1,0 +1,5 @@
+npm create vite
+npm i
+npm run dev
+
+.eslintrc.cjs por .eslintrc y cambiamos el objeto js por json
