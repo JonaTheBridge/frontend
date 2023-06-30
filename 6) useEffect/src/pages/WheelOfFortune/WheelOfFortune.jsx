@@ -11,7 +11,7 @@ function WheelOfFortune() {
   const [hasLoser, setHasLoser] = useState(false);
   const [score, setScore] = useState();
   const [playerScore, setPlayerScore] = useState(0);
-  const [fails, setFails] = useState(0);
+  const [fails, setFails] = useState([]);
   const [initGame, setInitGame] = useState(false);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ function WheelOfFortune() {
     }
 
     if (letter && !letterScore) {
-      setFails(fails + 1);
+      setFails([...fails, letter]);
     } else {
       setPlayerScore(playerScore + letterScore);
     }
@@ -41,7 +41,7 @@ function WheelOfFortune() {
   }, [letter]);
 
   useEffect(() => {
-    if (fails === 5) {
+    if (fails.length === 5) {
       setHasLoser(true);
     }
   }, [fails]);
@@ -97,9 +97,9 @@ function WheelOfFortune() {
       { hasLoser && <h4>Has perdido</h4> }
 
       { initGame && <h1>{ `My score: ${playerScore}` }</h1> }
-      { initGame && <h3>{ `Número de errores: ${fails}` }</h3> }
+      { initGame && <h3>{ `Número de errores: ${fails.length}: ${ fails }` }</h3> }
 
-      { !initGame && <Input
+      { !initGame && !hasWinner && !hasLoser && <Input
         type='password'
         placeholder='Inserte una pelicula'
         // onKeyUp={ keyUpOriginalPhraseHandler }
