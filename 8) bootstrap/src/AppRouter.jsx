@@ -1,5 +1,6 @@
 import { useRoutes } from 'react-router-dom';
 import Bootstrap from './pages/Bootstrap/Bootstrap.jsx';
+import TicTacToe from './pages/TicTacToe/TicTacToe.jsx';
 
 function AppRouter() {
   return useRoutes(
@@ -7,6 +8,10 @@ function AppRouter() {
       {
         element: <Bootstrap />,
         path: '/',
+      },
+      {
+        element: <TicTacToe />,
+        path: '/ticTacToe',
       },
     ]
   );

@@ -1,0 +1,29 @@
+.ticTacToe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  width: 400px;
+  height: 400px;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.turn {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+}
+
+.error {
+  color: rgb(224, 120, 120);
+}
