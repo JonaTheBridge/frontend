@@ -1,6 +1,8 @@
 import { useRoutes } from 'react-router-dom';
 import UseClicks from './pages/UseClicks/UseClicks.jsx';
 import UseAPIRequest from './pages/UseAPIRequest/UseAPIRequest.jsx';
+import UseGetData from './pages/UseGetData/UseGetData.jsx';
+import UseSort from './pages/UseSort/UseSort.jsx';
 
 function AppRouter() {
   return useRoutes(
@@ -16,6 +18,14 @@ function AppRouter() {
       {
         element: <UseAPIRequest />,
         path: '/useAPIRequest',
+      },
+      {
+        element: <UseGetData />,
+        path: '/useGetData',
+      },
+      {
+        element: <UseSort />,
+        path: '/useSort',
       },
     ]
   );
