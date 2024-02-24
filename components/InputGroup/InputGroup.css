@@ -1,0 +1,22 @@
+.inputGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-left: 0 !important;
+}
+
+.inputGroup > label {
+  padding-left: 0 !important;
+}
+
+.inputGroup > input {
+  border: 0;
+  border-bottom: 3px solid var(--primaryColor);
+}
+
+.inputGroup > input:focus-visible {
+  outline: none;
+  border: 0;
+  border-bottom: 3px solid var(--secondaryColor);
+}
