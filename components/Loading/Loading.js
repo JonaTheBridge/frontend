@@ -1,7 +1,21 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Loading = styled.div`
   height: 100px;
+
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes pulse${ props => props.$id } {
+    0% { fill: ${ props => props.$primaryColor || 'var(--primaryColor)' } }
+    40% { fill: ${ props => props.$secondaryColor || 'var(--secondaryColor)' } }
+    60% { fill: ${ props => props.$secondaryColor || 'var(--secondaryColor)' } }
+    100% { fill: ${ props => props.$primaryColor || 'var(--primaryColor)' } }
+  }
+
+  ${ props => props.$rotation && 'animation: rotate 3s infinite linear' };
 
   & > svg {
     width: 100%;
@@ -9,17 +23,9 @@ const Loading = styled.div`
   }
 
   & path {
-    fill: var(--primaryColor);
-    animation: pulse 5s infinite;
+    fill: ${ props => props.$primaryColor || 'var(--primaryColor)' };
+    ${ props => props.$pulse && `animation: pulse${ props.$id } 3s infinite linear` };
   }
+`
 
-  @keyframes pulse {
-    0% { fill: var(--primaryColor) }
-    40% { fill: var(--secondaryColor) }
-    60% { fill: var(--secondaryColor) }
-    100% { fill: var(--primaryColor) }
-  }
-
-`;
-
-export default Loading;
+export default Loading
